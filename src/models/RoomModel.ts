@@ -1,9 +1,9 @@
-import UserModel from "./UserModel";
+import UserModel from './UserModel';
 
 interface RoomModel {
-    roomId:string;
+    roomId: string;
     roomName: string;
     users: UserModel[];
 }
 
-export default RoomModel
+export default RoomModel;

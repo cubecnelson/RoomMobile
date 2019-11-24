@@ -1,7 +1,7 @@
-import { TouchableHighlight } from "react-native-gesture-handler";
+
 import React from 'react';
 import { Colors } from "../constants/colors";
-import { View, Text, StyleSheetProperties, ViewStyle, StyleSheet, TouchableOpacity, TextStyle } from 'react-native';
+import { Text, ViewStyle, StyleSheet, TouchableOpacity, TextStyle } from 'react-native';
 import { Component } from "react";
 
 interface ButtonProps {

@@ -1,4 +1,4 @@
-import { StringLiteral } from "@babel/types";
+import { StringLiteral } from '@babel/types';
 
 interface UserModel {
     userId: string;
