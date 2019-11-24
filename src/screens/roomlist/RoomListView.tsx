@@ -1,9 +1,8 @@
-import React from 'react'
-import RoomListItem from './RoomListItemView';
+import React from 'react';
 import { ViewStyle } from 'react-native';
-import RoomModel from '../../models/RoomModel';
 import { FlatList } from 'react-native-gesture-handler';
-
+import RoomListItem from './RoomListItemView';
+import RoomModel from '../../models/RoomModel';
 
 export interface RoomListProps {
     navigation: any;
@@ -12,7 +11,7 @@ export interface RoomListProps {
     style: ViewStyle;
 }
 
-const RoomList = (props: RoomListProps) =>{
+const RoomList = (props: RoomListProps) => {
     return (
         <FlatList
             showsHorizontalScrollIndicator={false}
@@ -20,12 +19,11 @@ const RoomList = (props: RoomListProps) =>{
             style={props.style}
             contentContainerStyle={props.contentContainerStyle}
             data={props.roomList}
-            renderItem={(item) => 
-                (<RoomListItem
-                    navigation={props.navigation}
-                    room={item.item}/>
-                )}
+            renderItem={item => (
+                <RoomListItem navigation={props.navigation} room={item.item} />
+            )}
         />
-)}
+    );
+};
 
-export default RoomList
+export default RoomList;

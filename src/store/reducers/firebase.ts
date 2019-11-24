@@ -1,5 +1,4 @@
-import { ActionTypes } from '../actions';
-import { Action } from '../actions';
+import { ActionTypes, Action } from '../actions';
 
 export default function firebase(state = { logedIn: false }, action: Action) {
     switch (action.type) {

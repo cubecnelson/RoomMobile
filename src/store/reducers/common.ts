@@ -1,5 +1,4 @@
-import { ActionTypes } from '../actions';
-import { Action } from '../actions';
+import { ActionTypes, Action } from '../actions';
 
 export default function common(state = { loading: false }, action: Action) {
     switch (action.type) {

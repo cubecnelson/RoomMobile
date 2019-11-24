@@ -15,7 +15,7 @@ instance.interceptors.request.use(
             .auth()
             .currentUser!.getIdToken()
             .then(token => {
-                config.headers.common['Authorization'] = token;
+                config.headers.common.Authorization = token;
                 return config;
             });
     },

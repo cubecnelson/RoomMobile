@@ -1,9 +1,7 @@
 import UserModel from './UserModel';
 
-interface RoomModel {
+export type RoomModel = {
     roomId: string;
     roomName: string;
     users: UserModel[];
-}
-
-export default RoomModel;
+};

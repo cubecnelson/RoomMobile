@@ -1,7 +1,5 @@
 import firebase from 'react-native-firebase';
-import { Dispatch, AnyAction } from 'redux';
 import { ActionTypes } from '.';
-import { ThunkAction } from 'redux-thunk';
 import { getUsers, getRooms } from '../../integrations/api/firebaseApi';
 
 export const loginFirebaseWithEmail = (email: string, password: string) => {
@@ -9,7 +7,7 @@ export const loginFirebaseWithEmail = (email: string, password: string) => {
         firebase
             .auth()
             .signInWithEmailAndPassword(email, password)
-            .then(credential => {
+            .then(() => {
                 firebase
                     .auth()
                     .currentUser!.getIdToken()
@@ -23,7 +21,7 @@ export const loginFirebaseWithEmail = (email: string, password: string) => {
 };
 
 export const getUsersFromFirebase = () => {
-    return (dispatch: Dispatch) => {
+    return () => {
         getUsers().then(response => {
             console.log(response);
         });
@@ -31,7 +29,7 @@ export const getUsersFromFirebase = () => {
 };
 
 export const getRoomsFromFirebase = () => {
-    return (dispatch: Dispatch) => {
+    return () => {
         getRooms().then(response => {
             console.log(response);
         });
