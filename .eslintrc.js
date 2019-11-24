@@ -9,6 +9,7 @@ module.exports = {
     plugins: ['autofix'],
     rules: {
         'autofix/no-debugger': 'error',
-        'no-unused-vars': 'error'
+        'no-unused-vars': 'off',
+        'no-undef': 'off'
     }
 };

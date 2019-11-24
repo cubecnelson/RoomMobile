@@ -1,7 +1,7 @@
 import UserModel from './UserModel';
 
-export type RoomModel = {
+export default interface RoomModel {
     roomId: string;
     roomName: string;
     users: UserModel[];
-};
+}

@@ -1,4 +1,4 @@
-export type UserModel = {
+export default interface UserModel {
     userId: string;
     userName: String;
-};
+}
