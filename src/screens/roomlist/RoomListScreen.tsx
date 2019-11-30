@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Colors } from '../../constants/colors';
 import RoomList from './RoomListView';
 import RoomModel from '../../models/RoomModel';
