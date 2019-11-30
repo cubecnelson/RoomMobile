@@ -36,7 +36,7 @@ class LoginScreen extends Component<Props> {
                                 style={{ alignSelf: 'center' }}
                                 name="dice-five"
                                 size={150}
-                                color={Colors.PrimarySalmon}
+                                color={Colors.PrimaryBlue}
                             />
                         </Transition>
 

@@ -90,10 +90,10 @@ const PrimaryFill = (props: ButtonProps) => {
     return (
         <Base
             activeContainerStyle={{ backgroundColor: 'transparent' }}
-            activeTextStyle={{ color: Colors.PrimarySalmon }}
-            textStyle={{ color: '#2f3f70' }}
+            activeTextStyle={{ color: Colors.PrimaryBlue }}
+            textStyle={{ color: Colors.PlainWhite }}
             containerStyle={{
-                backgroundColor: Colors.PrimarySalmon,
+                backgroundColor: Colors.PrimaryBlue,
                 borderRadius: 5
             }}
             {...props}
@@ -105,9 +105,9 @@ const PrimaryBorder = (props: ButtonProps) => {
     return (
         <Base
             activeOpacity={0.3}
-            textStyle={{ color: Colors.PrimarySalmon }}
+            textStyle={{ color: Colors.PrimaryBlue }}
             containerStyle={{
-                borderColor: Colors.PrimarySalmon,
+                borderColor: Colors.PrimaryBlue,
                 borderWidth: 1,
                 borderRadius: 5
             }}

@@ -39,7 +39,7 @@ class RoomScreen extends Component<Props> {
                     <Transition shared={room.roomId}>
                         <View
                             style={{
-                                backgroundColor: Colors.TransWhite,
+                                backgroundColor: Colors.TransBlack,
                                 flex: 1,
                                 alignSelf: 'stretch',
                                 margin: 10,
@@ -105,64 +105,7 @@ class RoomScreen extends Component<Props> {
                     >
                         <SafeAreaView>
                             {room.users.map((user: UserModel) => {
-                                return (
-                                    <View
-                                        style={{
-                                            height: 100,
-                                            marginRight: 10,
-                                            marginLeft: 10,
-                                            marginBottom: 10,
-                                            flexDirection: 'row'
-                                        }}
-                                    >
-                                        <Transition appear="flip">
-                                            <View
-                                                style={{
-                                                    flex: 1,
-                                                    flexDirection: 'column',
-                                                    alignSelf: 'stretch',
-                                                    borderColor: 'grey',
-                                                    borderRadius: 15,
-                                                    backgroundColor:
-                                                        Colors.TransWhite
-                                                }}
-                                            />
-                                        </Transition>
-
-                                        <View
-                                            style={{
-                                                padding: 10,
-                                                flexDirection: 'row',
-                                                position: 'absolute'
-                                            }}
-                                        >
-                                            <Transition shared={user.userId}>
-                                                <View
-                                                    style={
-                                                        styles.initialsContainer
-                                                    }
-                                                >
-                                                    <Text
-                                                        style={styles.initials}
-                                                    >
-                                                        {getNameInitials(
-                                                            user.userName
-                                                        )}
-                                                    </Text>
-                                                </View>
-                                            </Transition>
-                                            <View style={{ padding: 10 }}>
-                                                <Text
-                                                    style={{
-                                                        color: Colors.PlainWhite
-                                                    }}
-                                                >
-                                                    {user.userName}
-                                                </Text>
-                                            </View>
-                                        </View>
-                                    </View>
-                                );
+                                return this.renderUserItem(user);
                             })}
                         </SafeAreaView>
                     </View>
@@ -170,6 +113,57 @@ class RoomScreen extends Component<Props> {
             </LinearGradient>
         );
     }
+
+    renderUserItem = (user: UserModel) => {
+        return (
+            <View
+                style={{
+                    height: 100,
+                    marginRight: 10,
+                    marginLeft: 10,
+                    marginBottom: 10,
+                    flexDirection: 'row'
+                }}
+            >
+                <Transition appear="flip">
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'column',
+                            alignSelf: 'stretch',
+                            borderColor: 'grey',
+                            borderRadius: 15,
+                            backgroundColor: Colors.TransBlack
+                        }}
+                    />
+                </Transition>
+                <View
+                    style={{
+                        padding: 10,
+                        flexDirection: 'row',
+                        position: 'absolute'
+                    }}
+                >
+                    <Transition shared={user.userId}>
+                        <View style={styles.initialsContainer}>
+                            <Text style={styles.initials}>
+                                {getNameInitials(user.userName)}
+                            </Text>
+                        </View>
+                    </Transition>
+                    <View style={{ padding: 10 }}>
+                        <Text
+                            style={{
+                                color: Colors.PlainWhite
+                            }}
+                        >
+                            {user.userName}
+                        </Text>
+                    </View>
+                </View>
+            </View>
+        );
+    };
 }
 
 const styles = StyleSheet.create({
@@ -193,7 +187,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         width: 50,
         height: 50,
-        backgroundColor: Colors.PrimarySalmon,
+        backgroundColor: Colors.PrimaryBlue,
         margin: 8,
         justifyContent: 'center',
         alignItems: 'center'

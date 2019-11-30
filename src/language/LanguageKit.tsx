@@ -1,6 +1,6 @@
 import LocalizedStrings, { LocalizedStringsMethods } from 'react-localization';
 import React, { Component } from 'react';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import enStrings from './strings/en.json';
 import tcStrings from './strings/tc.json';
 import scStrings from './strings/sc.json';

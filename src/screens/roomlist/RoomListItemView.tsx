@@ -21,7 +21,7 @@ export default (props: RoomListItemProps) => {
             <Transition shared={props.room.roomId}>
                 <View
                     style={{
-                        backgroundColor: Colors.TransWhite,
+                        backgroundColor: Colors.TransBlack,
                         width: '100%',
                         height: '100%',
                         borderRadius: 15
@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         width: 50,
         height: 50,
-        backgroundColor: Colors.PrimarySalmon,
+        backgroundColor: Colors.PrimaryBlue,
         margin: 8,
         justifyContent: 'center',
         alignItems: 'center'
