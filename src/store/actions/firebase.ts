@@ -20,6 +20,19 @@ export const loginFirebaseWithEmail = (email: string, password: string) => {
     };
 };
 
+export const logout = () => {
+    return (dispatch: any) => {
+        firebase
+            .auth()
+            .signOut()
+            .then(() => {
+                dispatch({
+                    type: ActionTypes.LOGOUT_FIREBASE
+                });
+            });
+    };
+};
+
 export const getUsersFromFirebase = () => {
     return () => {
         getUsers().then(response => {

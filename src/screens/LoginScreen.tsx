@@ -27,7 +27,7 @@ class LoginScreen extends Component<Props> {
                 start={{ x: 0.0, y: 0.0 }}
                 end={{ x: 0.8, y: 0.8 }}
                 style={styles.container}
-                colors={['#381f56', '#2f3f70']}
+                colors={['rgb(35,56,70)', '#2f3f70']}
             >
                 <SafeAreaView style={[styles.container]}>
                     <View style={styles.container}>

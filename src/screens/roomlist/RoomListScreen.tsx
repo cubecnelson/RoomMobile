@@ -6,18 +6,23 @@ import { Colors } from '../../constants/colors';
 import RoomList from './RoomListView';
 import RoomModel from '../../models/RoomModel';
 import RoomMapView from '../../components/RoomMapView';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { TouchableOpacity } from 'react-native';
+import { logout } from '../../store/actions/firebase';
 
 interface Props {
     navigation: any;
     strings: any;
     setCurrLang: (lang: String) => {};
+    dispatch: any;
+    firebase: any;
 }
 
 interface State {
     roomList: RoomModel[];
 }
 
-export class RoomListScreen extends Component<Props, State> {
+class RoomListScreen extends Component<Props, State> {
     state = {
         roomList: [
             {
@@ -90,12 +95,16 @@ export class RoomListScreen extends Component<Props, State> {
     };
 
     render() {
+        console.log({ props: this.props });
+        if (!this.props.firebase.logedIn) {
+            this.props.navigation.navigate('Login');
+        }
         return (
             <LinearGradient
                 start={{ x: 0.0, y: 0.2 }}
                 end={{ x: 0.6, y: 1 }}
                 style={styles.container}
-                colors={['#381f56', '#2f3f70']}
+                colors={['rgb(35,56,70)', '#2f3f70']}
             >
                 <RoomMapView
                     style={{
@@ -116,15 +125,44 @@ export class RoomListScreen extends Component<Props, State> {
                         zIndex: 2
                     }}
                 >
-                    <Text
+                    <View
                         style={{
-                            fontSize: 20,
-                            color: Colors.PlainWhite,
-                            alignSelf: 'center'
+                            width: '100%',
+                            height: '100%',
+                            alignItems: 'center',
+                            justifyContent: 'center'
                         }}
                     >
-                        Room
-                    </Text>
+                        <Text
+                            style={{
+                                fontSize: 20,
+                                color: Colors.PlainWhite,
+                                alignSelf: 'center'
+                            }}
+                        >
+                            Room
+                        </Text>
+                        <TouchableOpacity
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                height: '100%',
+                                paddingHorizontal: 20,
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                            onPress={() => {
+                                this.props.dispatch(logout());
+                            }}
+                        >
+                            <Icon
+                                name="user-circle"
+                                size={25}
+                                color={Colors.PlainWhite}
+                            />
+                        </TouchableOpacity>
+                    </View>
                 </SafeAreaView>
 
                 <View style={{ flex: 1.5 }} />
@@ -145,8 +183,6 @@ export class RoomListScreen extends Component<Props, State> {
 }
 
 const mapStateToProps = (state: any) => ({ ...state });
-
-const mapDispatchToProps = {};
 
 const styles = StyleSheet.create({
     container: {
@@ -175,7 +211,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(RoomListScreen);
+export default connect(mapStateToProps)(RoomListScreen);

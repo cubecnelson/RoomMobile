@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.PrimaryBlue,
         margin: 8,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        zIndex: 99
     }
 });

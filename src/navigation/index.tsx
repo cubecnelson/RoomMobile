@@ -4,7 +4,7 @@ import { FluidNavigator } from 'react-navigation-fluid-transitions';
 import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RoomScreen from '../screens/RoomScreen';
-import { RoomListScreen } from '../screens/roomlist/RoomListScreen';
+import RoomListScreen from '../screens/roomlist/RoomListScreen';
 
 const AuthStack = FluidNavigator(
     {

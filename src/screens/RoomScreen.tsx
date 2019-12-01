@@ -6,11 +6,11 @@ import {
     SafeAreaView,
     StyleSheet,
     Platform,
-    TouchableOpacity
+    TouchableOpacity,
+    TouchableWithoutFeedback
 } from 'react-native';
 import { Transition } from 'react-navigation-fluid-transitions';
 import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import { Colors } from '../constants/colors';
 import { getNameInitials } from '../utils/stringUtils';
 import RoomModel from '../models/RoomModel';
@@ -33,49 +33,9 @@ class RoomScreen extends Component<Props> {
                 start={{ x: 0.0, y: 0.0 }}
                 end={{ x: 0.8, y: 0.8 }}
                 style={styles.container}
-                colors={['#381f56', '#2f3f70']}
+                colors={['rgb(35,56,70)', '#2f3f70']}
             >
                 <SafeAreaView style={{ flexDirection: 'column', flex: 1 }}>
-                    <Transition shared={room.roomId}>
-                        <View
-                            style={{
-                                backgroundColor: Colors.TransBlack,
-                                flex: 1,
-                                alignSelf: 'stretch',
-                                margin: 10,
-                                borderRadius: 15,
-                                flexDirection: 'column'
-                            }}
-                        >
-                            <View style={{ flex: 1, padding: 15 }}>
-                                <Text
-                                    style={{
-                                        fontSize: 20,
-                                        color: Colors.PlainWhite
-                                    }}
-                                >
-                                    {room.roomName}
-                                </Text>
-                            </View>
-                            <RoomDivider />
-                            <TouchableOpacity
-                                style={{
-                                    justifyContent: 'center',
-                                    alignSelf: 'stretch',
-                                    height: 40,
-                                    paddingLeft: 20,
-                                    paddingRight: 20,
-                                    paddingTop: 10,
-                                    paddingBottom: 10,
-                                    marginBottom: 10
-                                }}
-                            >
-                                <Text style={{ color: Colors.PlainWhite }}>
-                                    I'm in!!!
-                                </Text>
-                            </TouchableOpacity>
-                        </View>
-                    </Transition>
                     <Transition appear="bottom">
                         <TouchableOpacity
                             style={{ alignSelf: 'stretch' }}
@@ -83,32 +43,80 @@ class RoomScreen extends Component<Props> {
                                 this.props.navigation.goBack();
                             }}
                         >
-                            <Icon
+                            <View
                                 style={{
                                     alignSelf: 'center',
-                                    transform: [{ rotate: '-180deg' }]
+                                    width: 150,
+                                    height: 5,
+                                    backgroundColor: 'grey',
+                                    marginVertical: 10,
+                                    borderRadius: 10
                                 }}
-                                name="angle-up"
-                                size={30}
-                                color="grey"
                             />
                         </TouchableOpacity>
                     </Transition>
-                    <View
-                        style={[
-                            {
-                                width: '100%',
-                                alignSelf: 'flex-end',
-                                marginTop: 10
-                            }
-                        ]}
-                    >
-                        <SafeAreaView>
-                            {room.users.map((user: UserModel) => {
-                                return this.renderUserItem(user);
-                            })}
-                        </SafeAreaView>
-                    </View>
+                    <TouchableWithoutFeedback>
+                        <>
+                            <Transition shared={room.roomId}>
+                                <View
+                                    style={{
+                                        backgroundColor: Colors.TransBlack,
+                                        flex: 1,
+                                        alignSelf: 'stretch',
+                                        marginHorizontal: 10,
+                                        borderRadius: 15,
+                                        flexDirection: 'column'
+                                    }}
+                                >
+                                    <View style={{ flex: 1, padding: 15 }}>
+                                        <Text
+                                            style={{
+                                                fontSize: 20,
+                                                color: Colors.PlainWhite
+                                            }}
+                                        >
+                                            {room.roomName}
+                                        </Text>
+                                    </View>
+                                    <RoomDivider />
+                                    <TouchableOpacity
+                                        style={{
+                                            justifyContent: 'center',
+                                            alignSelf: 'stretch',
+                                            height: 40,
+                                            paddingLeft: 20,
+                                            paddingRight: 20,
+                                            paddingTop: 10,
+                                            paddingBottom: 10,
+                                            marginBottom: 10
+                                        }}
+                                    >
+                                        <Text
+                                            style={{ color: Colors.PlainWhite }}
+                                        >
+                                            I'm in!!!
+                                        </Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </Transition>
+
+                            <View
+                                style={[
+                                    {
+                                        width: '100%',
+                                        alignSelf: 'flex-end',
+                                        marginTop: 10
+                                    }
+                                ]}
+                            >
+                                <SafeAreaView>
+                                    {room.users.map((user: UserModel) => {
+                                        return this.renderUserItem(user);
+                                    })}
+                                </SafeAreaView>
+                            </View>
+                        </>
+                    </TouchableWithoutFeedback>
                 </SafeAreaView>
             </LinearGradient>
         );

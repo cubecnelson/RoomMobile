@@ -14,8 +14,10 @@ export interface RoomListProps {
 const RoomList = (props: RoomListProps) => {
     return (
         <FlatList
-            showsHorizontalScrollIndicator={false}
-            horizontal
+            horizontal={true}
+            decelerationRate={0}
+            snapToInterval={210}
+            snapToAlignment={'center'}
             style={props.style}
             contentContainerStyle={props.contentContainerStyle}
             data={props.roomList}
