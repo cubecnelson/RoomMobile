@@ -1,7 +1,6 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { FluidNavigator } from 'react-navigation-fluid-transitions';
-import HomeScreen from '../screens/HomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RoomScreen from '../screens/RoomScreen';
 import RoomListScreen from '../screens/roomlist/RoomListScreen';
@@ -37,7 +36,6 @@ const MainStack = createStackNavigator(
 
 const AppNavigator = createSwitchNavigator(
     {
-        Splash: HomeScreen,
         Main: MainStack,
         Auth: AuthStack
     },
