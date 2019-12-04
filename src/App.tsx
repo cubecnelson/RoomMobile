@@ -26,7 +26,7 @@ export default class App extends Component<Props> {
                 <StatusBar
                     backgroundColor="#00000000"
                     translucent
-                    barStyle="light-content"
+                    barStyle="dark-content"
                 />
                 <View style={{ flex: 1, alignSelf: 'stretch' }}>
                     <LoadingView />

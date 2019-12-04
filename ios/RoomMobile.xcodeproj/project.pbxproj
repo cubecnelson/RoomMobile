@@ -19,7 +19,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* RoomMobileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RoomMobileTests.m */; };
 		66D2D6DD3FA3B8403FC4C4EE /* libPods-RoomMobile-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C108B509E6C198F12412BD8 /* libPods-RoomMobile-tvOSTests.a */; };
 		7A72DEB7BA20E0F32C3A5DE5 /* libPods-RoomMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4254294B2D3BD1B04CF2DA83 /* libPods-RoomMobile.a */; };
-		B4CE783B2379BEC4007EC4D5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4CE783A2379BEC4007EC4D5 /* GoogleService-Info.plist */; };
+		B488B00223968B890087DB0C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B488B00123968B890087DB0C /* GoogleService-Info.plist */; };
 		D84305BCE2E1260472B6D080 /* libPods-RoomMobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05D4C888B630F47746454CF5 /* libPods-RoomMobileTests.a */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,7 @@
 		9FB96C4A2EE64E3C8FF870B6 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
 		A52425CEF17641BC848DF7B2 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		B1E989115AC7480997697C33 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		B4CE783A2379BEC4007EC4D5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B488B00123968B890087DB0C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B870AAD64B20480F84A64461 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		CFB028AFA631085646F78FB4 /* Pods-RoomMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RoomMobile.debug.xcconfig"; path = "Target Support Files/Pods-RoomMobile/Pods-RoomMobile.debug.xcconfig"; sourceTree = "<group>"; };
 		D9263670ACF365DE6417E5B5 /* libPods-RoomMobile-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RoomMobile-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,7 +192,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				B4CE783A2379BEC4007EC4D5 /* GoogleService-Info.plist */,
+				B488B00123968B890087DB0C /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* RoomMobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* RoomMobileTests */,
@@ -384,8 +384,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B488B00223968B890087DB0C /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				B4CE783B2379BEC4007EC4D5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

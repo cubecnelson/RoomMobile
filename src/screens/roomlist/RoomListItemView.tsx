@@ -16,7 +16,7 @@ export default (props: RoomListItemProps) => {
             onPress={() => {
                 props.navigation.navigate('Room', { room: props.room });
             }}
-            style={{ alignSelf: 'stretch', width: 200, margin: 5 }}
+            style={{ alignSelf: 'stretch', width: 300, margin: 5 }}
         >
             <Transition shared={props.room.roomId}>
                 <View

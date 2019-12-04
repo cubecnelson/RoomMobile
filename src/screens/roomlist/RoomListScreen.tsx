@@ -140,7 +140,7 @@ class RoomListScreen extends Component<Props, State> {
                                 alignSelf: 'center'
                             }}
                         >
-                            Room
+                            Wtsup!!
                         </Text>
                         <TouchableOpacity
                             style={{

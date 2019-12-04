@@ -16,7 +16,7 @@ const RoomList = (props: RoomListProps) => {
         <FlatList
             horizontal={true}
             decelerationRate={0}
-            snapToInterval={210}
+            snapToInterval={310}
             snapToAlignment={'center'}
             style={props.style}
             contentContainerStyle={props.contentContainerStyle}

@@ -60,10 +60,5 @@
     },
     "jest": {
         "preset": "react-native"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged && npm run lint"
-        }
     }
 }
